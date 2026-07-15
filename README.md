@@ -2,6 +2,21 @@
 
 A lightweight, high-performance, full-stack URL Shortener built with Java (Spring Boot), MySQL, and a clean modern frontend. This application allows users to paste long URLs and instantly generate clickable short links that redirect perfectly.
 
+---
+
+## 📸 Project Previews
+
+### 1. User Interface (Landing Page)
+![Landing Page](https://raw.githubusercontent.com/vivek65666/url-shortener/main/Screenhots/url-shortener%20land%20page.png)
+
+### 2. Shortened URL Generation
+![Shortened URL Link](https://raw.githubusercontent.com/vivek65666/url-shortener/main/Screenhots/url-shortener%20website%20link.png)
+
+### 3. MySQL Database Mapping
+![MySQL Database](https://raw.githubusercontent.com/vivek65666/url-shortener/main/Screenhots/url-shortener_db.url_mapping.png)
+
+---
+
 ## 🛠️ Tech Stack
 
 * **Frontend:** HTML5, CSS3, JavaScript (Fetch API)
