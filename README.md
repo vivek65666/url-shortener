@@ -22,17 +22,18 @@ A scalable full-stack URL Shortener application built using **Java 21**, **Sprin
 
 # 🏗️ System Architecture
 
+```
 Frontend (HTML/CSS/JavaScript)
-│
-▼
+            │
+            ▼
 Spring Boot REST API
-│
-▼
+            │
+            ▼
 Spring Data JPA (Hibernate)
-│
-▼
+            │
+            ▼
 MySQL Database
-
+```
 
 ---
 
@@ -76,6 +77,7 @@ MySQL Database
 
 # 📂 Project Structure
 
+```
 src
 ├── controller
 ├── service
@@ -83,7 +85,7 @@ src
 ├── entity
 ├── dto
 └── config
-
+```
 
 ---
 
@@ -116,58 +118,82 @@ The application uses **Spring Data JPA** for object-relational mapping.
 
 ```bash
 git clone [https://github.com/vivek65666/url-shortener.git](https://github.com/vivek65666/url-shortener.git)
-Navigate
-Bash
+```
+
+### Navigate
+
+```bash
 cd url-shortener
-Configure Database
+```
+
+### Configure Database
+
 Update:
 
+```
 src/main/resources/application.yaml
+```
+
 with your MySQL credentials.
 
-Run
-Bash
+### Run
+
+```bash
 mvn spring-boot:run
+```
+
 Application runs at
 
+```
 http://localhost:8081/index.html
-🧪 Testing
-REST APIs were tested using Postman.
+```
+
+---
+
+# 🧪 Testing
+
+REST APIs were tested using **Postman**.
 
 Example request:
 
+```
 POST /shorten
+```
+
 Request Body
 
-JSON
+```json
 {
   "url": "[https://www.amazon.com](https://www.amazon.com)"
 }
+```
+
 Response
 
-JSON
+```json
 {
   "shortUrl": "http://localhost:8081/abc123"
 }
-🚀 Future Enhancements
-User Authentication (JWT)
+```
 
-Custom Short URLs
+---
 
-QR Code Generation
+# 🚀 Future Enhancements
 
-URL Expiration
+- User Authentication (JWT)
+- Custom Short URLs
+- QR Code Generation
+- URL Expiration
+- Dashboard for Analytics
+- Docker Deployment
+- Redis Caching
+- Rate Limiting
 
-Dashboard for Analytics
+---
 
-Docker Deployment
+# 👨‍💻 Author
 
-Redis Caching
-
-Rate Limiting
-
-👨‍💻 Author
-Vivek C Raj
+**Vivek C Raj**
 
 GitHub: https://github.com/vivek65666
 
