@@ -16,7 +16,7 @@ A lightweight, high-performance, full-stack URL Shortener built with Java (Sprin
 ![Shortened URL Link](Screenhots/url-shortener%20website%20link.png)
 
 ### 4. MySQL Database Mapping
-![MySQL Database](Screenhots/url-shortener%20db%20%mapping.png)
+![MySQL Database](Screenhots/url-shortener%20db%20mapping.png)
 
 ---
 
