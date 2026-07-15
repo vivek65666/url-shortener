@@ -1,40 +1,200 @@
 # 🚀 Full-Stack URL Shortener
 
-A lightweight, high-performance, full-stack URL Shortener built with Java (Spring Boot), MySQL, and a clean modern frontend. This application allows users to paste long URLs and instantly generate clickable short links that redirect perfectly.
+A scalable full-stack URL Shortener application built using **Java 21**, **Spring Boot**, **Spring Data JPA**, **MySQL**, and a responsive **HTML, CSS, JavaScript** frontend. The application enables users to generate short URLs, automatically redirect to the original URLs, and track click analytics in real time.
 
 ---
 
-## 📸 Project Previews
+## 📸 Project Preview
 
-### 1. User Interface (Landing Page)
+### Landing Page
 ![Landing Page](Screenhots/url-shortener%20land%20page.png)
 
-### 2. Website View
+### Website View
 ![Website View](Screenhots/url-shortener%20website.png)
 
-### 3. Shortened URL Generation
-![Shortened URL Link](Screenhots/url-shortener%20website%20link.png)
+### Shortened URL Generation
+![Shortened URL](Screenhots/url-shortener%20website%20link.png)
 
-### 4. MySQL Database Mapping
-![MySQL Database](Screenhots/url-shortener%20db%20mapping.png)
+### MySQL Database
+![Database](Screenhots/url-shortener%20db%20mapping.png)
 
 ---
 
-## 🛠️ Tech Stack
+# 🏗️ System Architecture
 
-* **Frontend:** HTML5, CSS3, JavaScript (Fetch API)
-* **Backend:** Spring Boot (Java 21, JPA/Hibernate)
-* **Database:** MySQL (Real-time click tracking & analytics)
+```
+Frontend (HTML/CSS/JavaScript)
+            │
+            ▼
+Spring Boot REST API
+            │
+            ▼
+Spring Data JPA (Hibernate)
+            │
+            ▼
+MySQL Database
+```
 
-## 🚀 Features
+---
 
-* **Instant Shortening:** Fast unique code generation for any long web address.
-* **Auto Redirects:** Clean high-performance redirection on custom ports.
-* **Click Tracking:** Real-time click counter stored securely in a MySQL database.
-* **CORS Enabled:** Fully open APIs to connect backends to any frontend build.
+# 🛠 Tech Stack
 
-## 🛠️ How to Run Locally
+### Backend
+- Java 21
+- Spring Boot
+- Spring Data JPA
+- Hibernate
+- REST APIs
 
-1. Clone this repository:
-   ```bash
-   git clone [https://github.com/vivek65666/url-shortener.git](https://github.com/vivek65666/url-shortener.git)
+### Frontend
+- HTML5
+- CSS3
+- JavaScript (Fetch API)
+
+### Database
+- MySQL
+
+### Tools
+- Git
+- GitHub
+- Maven
+- Postman
+
+---
+
+# ✨ Features
+
+- Generate unique short URLs instantly
+- Automatic redirection using generated short codes
+- Real-time click tracking and analytics
+- Persistent URL storage using MySQL
+- Responsive frontend interface
+- RESTful API architecture
+- Layered backend architecture
+- CORS enabled for frontend-backend communication
+
+---
+
+# 📂 Project Structure
+
+```
+src
+├── controller
+├── service
+├── repository
+├── entity
+├── dto
+└── config
+```
+
+---
+
+# 📌 REST API Endpoints
+
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| POST | `/shorten` | Generate a short URL |
+| GET | `/{shortCode}` | Redirect to original URL |
+| GET | `/analytics/{shortCode}` | Retrieve click analytics |
+
+---
+
+# 🗄 Database
+
+MySQL stores:
+
+- Original URL
+- Short Code
+- Click Count
+- Created Timestamp
+
+The application uses **Spring Data JPA** for object-relational mapping.
+
+---
+
+# ▶️ Getting Started
+
+### Clone Repository
+
+```bash
+git clone https://github.com/vivek65666/url-shortener.git
+```
+
+### Navigate
+
+```bash
+cd url-shortener
+```
+
+### Configure Database
+
+Update:
+
+```
+src/main/resources/application.properties
+```
+
+with your MySQL credentials.
+
+### Run
+
+```bash
+mvn spring-boot:run
+```
+
+Application runs at
+
+```
+http://localhost:8080
+```
+
+---
+
+# 🧪 Testing
+
+REST APIs were tested using **Postman**.
+
+Example request:
+
+```
+POST /shorten
+```
+
+Request Body
+
+```json
+{
+  "url": "https://www.amazon.com"
+}
+```
+
+Response
+
+```json
+{
+  "shortUrl": "http://localhost:8080/abc123"
+}
+```
+
+---
+
+# 🚀 Future Enhancements
+
+- User Authentication (JWT)
+- Custom Short URLs
+- QR Code Generation
+- URL Expiration
+- Dashboard for Analytics
+- Docker Deployment
+- Redis Caching
+- Rate Limiting
+
+---
+
+# 👨‍💻 Author
+
+**Vivek C Raj**
+
+GitHub: https://github.com/vivek65666
+
+LinkedIn: https://linkedin.com/in/vivek-c-raj
