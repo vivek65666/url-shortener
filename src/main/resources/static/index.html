@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 400px;
+        }
+        h1 { color: #333; margin-bottom: 20px; }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover { background-color: #0056b3; }
+        .result {
+            margin-top: 25px;
+            padding: 15px;
+            background: #e9ecef;
+            border-radius: 5px;
+            display: none;
+            word-break: break-all;
+        }
+        .result a { color: #007bff; font-weight: bold; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>URL Shortener</h1>
+    <input type="url" id="longUrl" placeholder="Paste your long URL here..." required>
+    <button onclick="shortenLink()">Shorten URL</button>
+
+    <div id="resultBox" class="result">
+        <p>Your Shortened Link:</p>
+        <a id="shortLink" href="#" target="_blank"></a>
+    </div>
+</div>
+
+<script>
+    async function shortenLink() {
+        const longUrlInput = document.getElementById('longUrl').value;
+        const resultBox = document.getElementById('resultBox');
+        const shortLink = document.getElementById('shortLink');
+
+        if (!longUrlInput) {
+            alert("Please enter a URL!");
+            return;
+        }
+
+        try {
+            const response = await fetch('http://localhost:8081/api/v1/shorten', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ longUrl: longUrlInput })
+            });
+
+            const data = await response.json();
+            
+            if (data.shortUrl) {
+                shortLink.href = data.shortUrl;
+                shortLink.innerText = data.shortUrl;
+                resultBox.style.display = 'block';
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Failed to shorten URL. Make sure the backend is running!');
+        }
+    }
+</script>
+
+</body>
+</html>
