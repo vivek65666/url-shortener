@@ -7,16 +7,16 @@ A lightweight, high-performance, full-stack URL Shortener built with Java (Sprin
 ## 📸 Project Previews
 
 ### 1. User Interface (Landing Page)
-![Landing Page](https://raw.githubusercontent.com/vivek65666/url-shortener/main/Screenhots/url-shortener%20land%20page.png)
+![Landing Page](Screenhots/url-shortener%20land%20page.png)
 
 ### 2. Website View
-![Website View](https://raw.githubusercontent.com/vivek65666/url-shortener/main/Screenhots/url-shortener%20website.png)
+![Website View](Screenhots/url-shortener%20website.png)
 
 ### 3. Shortened URL Generation
-![Shortened URL Link](https://raw.githubusercontent.com/vivek65666/url-shortener/main/Screenhots/url-shortener%20website%20link.png)
+![Shortened URL Link](Screenhots/url-shortener%20website%20link.png)
 
 ### 4. MySQL Database Mapping
-![MySQL Database](https://raw.githubusercontent.com/vivek65666/url-shortener/main/Screenhots/url-shortener_db.url_mapping.png)
+![MySQL Database](Screenhots/url-shortener_db.url_mapping.png)
 
 ---
 
