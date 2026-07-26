@@ -80,7 +80,7 @@
         }
 
         try {
-            const response = await fetch('http://localhost:8081/api/v1/shorten', {
+            const response = await fetch('/api/v1/shorten', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ longUrl: longUrlInput })

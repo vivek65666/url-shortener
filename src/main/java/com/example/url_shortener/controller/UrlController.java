@@ -31,7 +31,7 @@ public class UrlController {
     public ResponseEntity<Map<String, String>> shortenUrl(@RequestBody Map<String, String> request) {
         String longUrl = request.get("longUrl");
         String shortCode = urlService.shortenUrl(longUrl);
-        String shortUrl = "http://localhost:8081/api/v1/" + shortCode;
+        String shortUrl = "http://13.232.1.17:8081/api/v1/" + shortCode;
         return ResponseEntity.ok(Map.of("shortUrl", shortUrl));
     }
 
