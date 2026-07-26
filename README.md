@@ -1,200 +1,464 @@
-# 🚀 Full-Stack URL Shortener
+# 🔗 URL Shortener Service
 
-A scalable full-stack URL Shortener application built using **Java 21**, **Spring Boot**, **Spring Data JPA**, **MySQL**, and a responsive **HTML, CSS, JavaScript** frontend. The application enables users to generate short URLs, automatically redirect to the original URLs, and track click analytics in real time.
+![Java](https://img.shields.io/badge/Java-17-orange)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen)
+![MySQL](https://img.shields.io/badge/MySQL-Database-blue)
+![AWS EC2](https://img.shields.io/badge/AWS-EC2-yellow)
+![GitHub](https://img.shields.io/badge/Code-GitHub-black)
 
----
+A cloud-deployed **URL Shortener Service** built using **Java Spring Boot, MySQL, and AWS EC2**.
 
-## 📸 Project Preview
-
-### Landing Page
-![Landing Page](Screenhots/url-shortener%20land%20page.png)
-
-### Website View
-![Website View](Screenhots/url-shortener%20website.png)
-
-### Shortened URL Generation
-![Shortened URL](Screenhots/url-shortener%20website%20link.png)
-
-### MySQL Database
-![Database](Screenhots/url-shortener%20db%20mapping.png)
+The application provides a simple and efficient way to convert long URLs into short URLs and redirect users to the original links. The backend application is deployed on an AWS EC2 Linux server with database connectivity and security configuration.
 
 ---
 
-# 🏗️ System Architecture
+# 📌 Project Overview
+
+The goal of this project was to build and deploy a real-world backend application with cloud infrastructure.
+
+The application demonstrates:
+
+- Backend API development using Spring Boot
+- Database integration using MySQL
+- Cloud deployment using AWS EC2
+- Linux server management
+- Security configuration using AWS Security Groups
+- Version control using Git and GitHub
+
+---
+
+# 🚀 Live Deployment
+
+The application is deployed on AWS EC2 and publicly accessible.
+
+🌐 Application URL:
 
 ```
-Frontend (HTML/CSS/JavaScript)
-            │
-            ▼
-Spring Boot REST API
-            │
-            ▼
-Spring Data JPA (Hibernate)
-            │
-            ▼
-MySQL Database
+http://13.232.1.17:8081
 ```
-
----
-
-# 🛠 Tech Stack
-
-### Backend
-- Java 21
-- Spring Boot
-- Spring Data JPA
-- Hibernate
-- REST APIs
-
-### Frontend
-- HTML5
-- CSS3
-- JavaScript (Fetch API)
-
-### Database
-- MySQL
-
-### Tools
-- Git
-- GitHub
-- Maven
-- Postman
 
 ---
 
 # ✨ Features
 
-- Generate unique short URLs instantly
-- Automatic redirection using generated short codes
-- Real-time click tracking and analytics
-- Persistent URL storage using MySQL
-- Responsive frontend interface
-- RESTful API architecture
-- Layered backend architecture
-- CORS enabled for frontend-backend communication
+## 🔗 URL Shortening
+
+- Accepts long URLs from users
+- Generates unique short URLs
+- Stores URL mappings in MySQL database
+
+
+## 🔄 URL Redirection
+
+- Redirects users from short URL to original URL
+- Handles URL mapping dynamically
+
+
+## 🗄️ Database Management
+
+- Persistent URL storage
+- MySQL database integration
+- JPA/Hibernate based database operations
+
+
+## ☁️ Cloud Deployment
+
+- Hosted on AWS EC2
+- Linux-based deployment environment
+- Public access configured through Security Groups
+
+---
+
+# 🏗️ System Architecture
+
+
+```
+                    User Browser
+                         |
+                         |
+                         v
+
+                AWS EC2 Instance
+                         |
+                         |
+                         v
+
+             Spring Boot Application
+                         |
+                         |
+                         v
+
+                    MySQL Database
+
+```
+
+
+---
+
+# 🛠️ Technology Stack
+
+## Backend
+
+| Technology | Purpose |
+|------------|---------|
+| Java | Programming Language |
+| Spring Boot | Backend Framework |
+| Spring Data JPA | Database Operations |
+| REST API | API Communication |
+| Maven | Dependency Management |
+
+
+## Database
+
+| Technology | Purpose |
+|------------|---------|
+| MySQL | Data Storage |
+
+
+## Cloud & DevOps
+
+| Technology | Purpose |
+|------------|---------|
+| AWS EC2 | Application Hosting |
+| IAM Role | Secure AWS Access |
+| Security Groups | Network Security |
+| Linux Ubuntu | Server Environment |
+| SSH | Remote Server Management |
+| Git/GitHub | Version Control |
 
 ---
 
 # 📂 Project Structure
 
+
 ```
-src
-├── controller
-├── service
-├── repository
-├── entity
-├── dto
-└── config
+url-shortener/
+
+│
+├── src/
+│   │
+│   ├── main/
+│   │   │
+│   │   ├── java/
+│   │   │
+│   │   └── resources/
+│
+├── pom.xml
+│
+├── application.properties
+│
+├── README.md
+│
+└── screenshots/
+
 ```
 
----
-
-# 📌 REST API Endpoints
-
-| Method | Endpoint | Description |
-|---------|----------|-------------|
-| POST | `/shorten` | Generate a short URL |
-| GET | `/{shortCode}` | Redirect to original URL |
-| GET | `/analytics/{shortCode}` | Retrieve click analytics |
 
 ---
 
-# 🗄 Database
+# ⚙️ Local Installation & Setup
 
-MySQL stores:
 
-- Original URL
-- Short Code
-- Click Count
-- Created Timestamp
+## 1. Clone Repository
 
-The application uses **Spring Data JPA** for object-relational mapping.
-
----
-
-# ▶️ Getting Started
-
-### Clone Repository
 
 ```bash
-git clone [https://github.com/vivek65666/url-shortener.git](https://github.com/vivek65666/url-shortener.git)
+git clone https://github.com/vivek65666/url-shortener.git
 ```
 
-### Navigate
+
+## 2. Navigate to Project
+
 
 ```bash
 cd url-shortener
 ```
 
-### Configure Database
+
+## 3. Configure Database
+
 
 Update:
 
 ```
-src/main/resources/application.yaml
+src/main/resources/application.properties
 ```
 
-with your MySQL credentials.
 
-### Run
+Example:
+
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/urlshortener
+spring.datasource.username=root
+spring.datasource.password=password
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+```
+
+
+---
+
+## 4. Build Application
+
 
 ```bash
-mvn spring-boot:run
+mvn clean package
 ```
 
-Application runs at
+
+---
+
+## 5. Run Application
+
+
+```bash
+java -jar target/url-shortener.jar
+```
+
+
+Application will start:
 
 ```
-http://localhost:8081/index.html
+http://localhost:8081
 ```
+
+---
+
+# ☁️ AWS EC2 Deployment
+
+
+## Deployment Process
+
+
+### Step 1: Launch EC2 Instance
+
+- Created AWS EC2 Ubuntu instance
+- Configured SSH access
+
+
+### Step 2: Install Required Software
+
+
+Installed:
+
+- Java
+- MySQL
+- Git
+
+
+### Step 3: Upload Application
+
+
+Transferred Spring Boot JAR file to EC2 server.
+
+
+### Step 4: Start Application
+
+
+```bash
+java -jar url-shortener.jar
+```
+
+
+### Step 5: Configure Security Group
+
+
+Allowed ports:
+
+
+| Port | Purpose |
+|------|---------|
+| 22 | SSH |
+| 8081 | Spring Boot Application |
+
+
+---
+
+# 🔐 AWS Security Configuration
+
+
+Security Group Rules:
+
+
+```
+Inbound Rules
+
+SSH       : 22
+HTTP App  : 8081
+
+```
+
+
+Application is accessible from the internet through EC2 public IP.
+
+---
+
+# 📸 Screenshots
+
+
+## Application Running
+
+![Application Running](screenshots/application-running.png)
+
+
+
+## URL Shortening Test
+
+![URL Shortening](screenshots/url-shortening.png)
+
+
+
+## Redirect Functionality
+
+![Redirect](screenshots/redirect.png)
+
+
+
+## AWS EC2 Deployment
+
+![AWS EC2](screenshots/ec2-instance.png)
+
+
 
 ---
 
 # 🧪 Testing
 
-REST APIs were tested using **Postman**.
 
-Example request:
+## URL Creation Test
+
+
+Request:
 
 ```
-POST /shorten
+POST /api/url
 ```
 
-Request Body
 
-```json
-{
-  "url": "[https://www.amazon.com](https://www.amazon.com)"
-}
+Example:
+
+
+```
+Original URL:
+
+https://www.google.com
+
+
+Generated URL:
+
+http://13.232.1.17:8081/abc123
+
 ```
 
-Response
 
-```json
-{
-  "shortUrl": "http://localhost:8081/abc123"
-}
+---
+
+## Redirect Test
+
+
+Opening:
+
+
 ```
+http://13.232.1.17:8081/abc123
+```
+
+
+Successfully redirects to:
+
+
+```
+https://www.google.com
+```
+
+
+---
+
+# 📊 Deployment Status
+
+
+| Component | Status |
+|-----------|--------|
+| Spring Boot Application | ✅ Completed |
+| MySQL Database | ✅ Connected |
+| AWS EC2 Deployment | ✅ Completed |
+| Security Group Configuration | ✅ Completed |
+| Public Access | ✅ Enabled |
+| URL Shortening | ✅ Working |
+| Redirect Feature | ✅ Working |
+| GitHub Repository | ✅ Updated |
 
 ---
 
 # 🚀 Future Enhancements
 
-- User Authentication (JWT)
-- Custom Short URLs
-- QR Code Generation
-- URL Expiration
-- Dashboard for Analytics
-- Docker Deployment
-- Redis Caching
-- Rate Limiting
+
+## DevOps Improvements
+
+- Docker containerization
+- Docker Compose deployment
+- CI/CD pipeline using GitHub Actions
+- Jenkins automation
+
+
+## Cloud Improvements
+
+- AWS Application Load Balancer
+- Route 53 Domain Mapping
+- HTTPS using SSL Certificate
+- AWS CloudWatch Monitoring
+
+
+## Application Improvements
+
+- User authentication
+- URL expiration
+- Click analytics
+- Redis caching
+- API documentation using Swagger
+
+---
+
+# 🎯 Skills Demonstrated
+
+
+This project demonstrates practical experience with:
+
+
+✅ Java Backend Development  
+✅ Spring Boot REST APIs  
+✅ MySQL Database Integration  
+✅ AWS EC2 Deployment  
+✅ Linux Server Administration  
+✅ Cloud Networking  
+✅ Security Groups  
+✅ Git Version Control  
+✅ Application Deployment  
+
 
 ---
 
 # 👨‍💻 Author
 
-**Vivek C Raj**
 
-GitHub: https://github.com/vivek65666
+## Vivek C Raj
 
-LinkedIn: https://linkedin.com/in/vivek-c-raj
+
+MCA Student | Aspiring DevOps & Cloud Engineer
+
+
+GitHub:
+
+https://github.com/vivek65666
+
+
+LinkedIn:
+
+https://linkedin.com/in/vivek-c-raj
+
+
+---
+
+⭐ If you find this project useful, consider giving it a star!
