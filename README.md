@@ -295,31 +295,20 @@ Application is accessible from the internet through EC2 public IP.
 
 ---
 
-# 📸 Screenshots
 
+## 📸 Screenshots
 
-## Application Running
+### Application Running
+![Application Running](screenshots/url-shortener land page.png)
 
-![Application Running](screenshots/application-running.png)
+### URL Shortening Test
+![URL Shortening](screenshots/url-shortener website.png)
 
+### Redirect Functionality
+![Redirect](screenshots/url-shortener db mapping.png)
 
-
-## URL Shortening Test
-
-![URL Shortening](screenshots/url-shortening.png)
-
-
-
-## Redirect Functionality
-
-![Redirect](screenshots/redirect.png)
-
-
-
-## AWS EC2 Deployment
-
-![AWS EC2](screenshots/ec2-instance.png)
-
+### AWS EC2 Deployment
+![AWS EC2](screenshots/ec2 terminal.png)
 
 
 ---
