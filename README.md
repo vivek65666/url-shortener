@@ -294,22 +294,19 @@ HTTP App  : 8081
 Application is accessible from the internet through EC2 public IP.
 
 ---
-
-
-## 📸 Screenshots
+# 📸 Screenshots
 
 ### Application Running
-![Application Running](screenshots/url-shortener land page.png)
+![Application Running](screenshots/url-shortener%20land%20page.png)
 
 ### URL Shortening Test
-![URL Shortening](screenshots/url-shortener website.png)
+![URL Shortening](screenshots/url-shortener%20website.png)
 
 ### Redirect Functionality
-![Redirect](screenshots/url-shortener db mapping.png)
+![Redirect](screenshots/url-shortener%20db%20mapping.png)
 
 ### AWS EC2 Deployment
-![AWS EC2](screenshots/ec2 terminal.png)
-
+![AWS EC2](screenshots/ec2%20terminal.png)
 
 ---
 
