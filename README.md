@@ -348,7 +348,7 @@ Opening:
 
 
 ```
-http://<EC2-PUBLIC-IP>:8081:8081/abc123
+http://<EC2-PUBLIC-IP>:8081/abc123
 ```
 
 
