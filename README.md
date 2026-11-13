@@ -34,7 +34,7 @@ The application is deployed on AWS EC2 and publicly accessible.
 🌐 Application URL:
 
 ```
-http://13.232.1.17:8081
+http://<EC2-PUBLIC-IP>:8081
 ```
 
 ---
@@ -334,7 +334,7 @@ https://www.google.com
 
 Generated URL:
 
-http://13.232.1.17:8081/abc123
+http://<EC2-PUBLIC-IP>:8081:8081/abc123
 
 ```
 
@@ -348,7 +348,7 @@ Opening:
 
 
 ```
-http://13.232.1.17:8081/abc123
+http://<EC2-PUBLIC-IP>:8081:8081/abc123
 ```
 
 
